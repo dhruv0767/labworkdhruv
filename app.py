@@ -1,17 +1,34 @@
 import streamlit as st
-from streamlit import session_state as state
+import lab1
+import lab2
+import lab3
+import lab4
 
-# Define individual pages for homework 1 and homework 2
-lab4_page = st.Page("lab4.py", title="lab4")
-lab3_page = st.Page("lab3.py", title="lab3")
-lab2_page = st.Page("lab2.py", title="lab2")
-lab1_page = st.Page("lab1.py", title="lab1")
+# Title for the main page
+st.title('Simple Streamlit App')
 
-# Initialize navigation with the pages
-pg = st.navigation([lab4_page,lab3_page,lab2_page,lab1_page])
+# Sidebar selection
+st.sidebar.title("Navigation")
+selection = st.sidebar.radio("Go to", ["Home", "Lab 1", "Lab 2", "Lab 3", "Lab 4"])
 
-# Set page configuration (optional but helps with page title and icon)
-st.set_page_config(page_title="Homework Manager", page_icon=":memo:")
+# Home Page
+if selection == "Home":
+    st.write("""
+    ## Welcome to the Dhruv's Streamlit Labs App
+    Use the sidebar to navigate to different labs.
+    """)
 
-# Run the navigation system
-pg.run()
+# Lab 1 Page
+elif selection == "Lab 1":
+    lab1.run()
+
+# Lab 2 Page
+elif selection == "Lab 2":
+    lab2.run()
+
+# Lab 3 Page
+elif selection == "Lab 3":
+    lab3.run()
+
+elif selection == "Lab 4":
+    lab4.run()

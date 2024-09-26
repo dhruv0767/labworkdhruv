@@ -3,13 +3,14 @@ import lab1
 import lab2
 import lab3
 import lab4
+import lab5
 
 # Title for the main page
 st.title('Simple Streamlit App')
 
 # Sidebar selection
 st.sidebar.title("Navigation")
-selection = st.sidebar.radio("Go to", ["Home", "Lab 1", "Lab 2", "Lab 3", "Lab 4"])
+selection = st.sidebar.radio("Go to", ["Home", "Lab 1", "Lab 2", "Lab 3", "Lab 4", "lab 5"])
 
 # Home Page
 if selection == "Home":
@@ -32,3 +33,6 @@ elif selection == "Lab 3":
 
 elif selection == "Lab 4":
     lab4.run()
+
+elif selection == "Lab 5":
+    lab5.run()
